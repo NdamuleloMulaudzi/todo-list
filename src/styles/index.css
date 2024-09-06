@@ -1,0 +1,28 @@
+body {
+  background-color: whitesmoke;
+  margin: 1px;
+}
+.container {
+  display: grid;
+  grid-template-columns: 400px 200px;
+  grid-template-rows: auto 1fr;
+  gap: 2px;
+  height: 99.8vh;
+}
+#header {
+  grid-column: 1/4;
+  grid-row: 1/2;
+  text-align: center;
+  border: 1px solid black;
+}
+#sidebar {
+  border: 1px solid;
+  grid-row: 2/-1;
+  grid-column: 1/2;
+}
+
+#task-dialog {
+  border: 1px solid;
+  grid-column: 2/4;
+  text-align: center;
+}

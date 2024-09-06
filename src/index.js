@@ -1,3 +1,4 @@
-import controls from "./controls";
+import projectControls from "./projectControls";
+import "./styles/index.css";
 
-controls();
+projectControls();
