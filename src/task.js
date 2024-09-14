@@ -4,11 +4,11 @@ export default class Task {
     this.description = description;
     this.dueDate = dueDate;
     this.priority = priority;
+
+    this.isComplete = false;
+  }
+
+  toggleComplete() {
+    this.isComplete = !this.isComplete;
   }
 }
-const firsttask = new Task(
-  "Assessment 1",
-  "Write Assessment 1",
-  "23/12/2024",
-  "High"
-);
