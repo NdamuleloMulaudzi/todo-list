@@ -5,7 +5,7 @@ const taskManager = new TaskManager();
 
 // Display project list
 export const displayProjects = () => {
-  const projectContainer = document.getElementById("project-container");
+  const projectContainer = document.querySelector("#project-container");
   projectContainer.innerHTML = "";
 
   taskManager.getAllProjects().forEach((projectName) => {
@@ -38,14 +38,14 @@ export const displayProjects = () => {
 const deleteProject = (projectName) => {
   taskManager.removeProject(projectName);
   displayProjects();
-  document.getElementById("task-list").innerHTML = ""; // Clear task list
-  document.getElementById("project-header").innerText = ""; // Clear project name header
+  document.querySelector("#task-list").innerHTML = ""; // Clear task list
+  document.querySelector("#project-header").innerText = ""; // Clear project name header
 };
 
 // Display tasks for a selected project
 export const displayTasks = (projectName) => {
-  const taskList = document.getElementById("task-list");
-  const projectHeader = document.getElementById("project-header");
+  const taskList = document.querySelector("#task-list");
+  const projectHeader = document.querySelector("#project-header");
 
   taskList.innerHTML = "";
   projectHeader.innerHTML = `<h2>${projectName}</h2>`; // Update project header
@@ -86,14 +86,14 @@ export const displayTasks = (projectName) => {
 
 // Event Handlers for adding projects and tasks
 export const setupEventHandlers = () => {
-  const projectDialog = document.getElementById("project-dialog");
-  document.getElementById("project").addEventListener("click", () => {
+  const projectDialog = document.querySelector("#project-dialog");
+  document.querySelector("#project").addEventListener("click", () => {
     projectDialog.showModal();
   });
 
-  document.getElementById("add-project").addEventListener("click", (event) => {
+  document.querySelector("#add-project").addEventListener("click", (event) => {
     event.preventDefault();
-    const projectName = document.getElementById("project-name").value.trim();
+    const projectName = document.querySelector("#project-name").value.trim();
 
     // Check if project name is empty
     if (!projectName) {
@@ -106,20 +106,20 @@ export const setupEventHandlers = () => {
     displayProjects();
   });
 
-  document.getElementById("cancel-project").addEventListener("click", () => {
+  document.querySelector("#cancel-project").addEventListener("click", () => {
     projectDialog.close();
   });
 
-  const taskDialog = document.getElementById("task-dialog");
-  document.getElementById("task").addEventListener("click", () => {
+  const taskDialog = document.querySelector("#task-dialog");
+  document.querySelector("#task").addEventListener("click", () => {
     taskDialog.showModal();
   });
 
-  document.getElementById("add-task").addEventListener("click", (event) => {
+  document.querySelector("#add-task").addEventListener("click", (event) => {
     event.preventDefault();
-    const title = document.getElementById("title").value;
-    const description = document.getElementById("description").value;
-    const dueDate = document.getElementById("deadline").value;
+    const title = document.querySelector("#title").value;
+    const description = document.querySelector("#description").value;
+    const dueDate = document.querySelector("#deadline").value;
 
     const priority = document.querySelector(
       'input[name="priority"]:checked'
@@ -132,7 +132,7 @@ export const setupEventHandlers = () => {
     displayTasks("Default");
   });
 
-  document.getElementById("cancel-task").addEventListener("click", () => {
+  document.querySelector("#cancel-task").addEventListener("click", () => {
     taskDialog.close();
   });
 };
