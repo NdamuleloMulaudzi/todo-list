@@ -1,4 +1,6 @@
-import controls from "./controls";
+import { displayProjects, displayTasks, setupEventHandlers } from "./dom.js";
 import "./styles/index.css";
-
-controls();
+// Initialize the app
+setupEventHandlers();
+displayProjects();
+displayTasks("Default");
