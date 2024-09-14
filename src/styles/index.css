@@ -18,6 +18,10 @@ body {
 #sidebar-container {
   border: 1px solid;
   grid-column: 1/2;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  padding: 20px;
 }
 
 #task-container {
